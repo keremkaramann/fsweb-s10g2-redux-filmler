@@ -1,12 +1,12 @@
 import { ADD_MOVIE, DELETE_MOVIE } from "../actions/movieActions.js";
 import movies from "../data.js";
 
-const initialState = {
+const movieInitialState = {
   movies: movies,
   appTitle: "IMDB Movie Database",
 };
 
-const reducer = (state = initialState, action) => {
+const movieReducer = (state = movieInitialState, action) => {
   switch (action.type) {
     case DELETE_MOVIE:
       return {
@@ -23,4 +23,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default movieReducer;

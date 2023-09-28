@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const AppHeader = (props) => {
-  const appTitle = useSelector((store) => store.appTitle);
+const AppHeader = () => {
+  const appTitle = useSelector((store) => store.movies_reducer.appTitle);
   const displayFavorites = true;
 
   return (

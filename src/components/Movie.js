@@ -6,7 +6,7 @@ const Movie = (props) => {
   const { id } = useParams();
   const { push } = useHistory();
 
-  const movies = useSelector((store) => store.movies);
+  const movies = useSelector((store) => store.movies_reducer.movies);
   const movie = movies.find((movie) => movie.id === Number(id));
 
   const dispatch = useDispatch();
