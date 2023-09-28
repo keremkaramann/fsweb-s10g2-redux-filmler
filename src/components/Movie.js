@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { deleteMovie } from "../actions/movieActions";
-const Movie = (props) => {
+import { addFavorite } from "../actions/favoritesActions";
+import { removeFavoriteFromMovies } from "../actions/movieActions";
+const Movie = () => {
   const { id } = useParams();
   const { push } = useHistory();
 
@@ -10,10 +11,22 @@ const Movie = (props) => {
   const movie = movies.find((movie) => movie.id === Number(id));
 
   const dispatch = useDispatch();
+  const favorites = useSelector((store) => store.favorites_reducer.favorites);
+  const toggleBtn = useSelector(
+    (store) => store.favorites_reducer.displayFavorites
+  );
 
-  const eraseMovie = (id) => {
+  const addFavs = (movie) => {
+    if (!favorites.find((favMovie) => favMovie.id === movie.id)) {
+      dispatch(addFavorite(movie));
+    } else {
+      alert("Movie is already in favorites!!!");
+    }
+  };
+
+  const earseAll = (id) => {
     const parsedId = parseInt(id, 10);
-    dispatch(deleteMovie(parsedId));
+    dispatch(removeFavoriteFromMovies(parsedId));
     push("/movies");
   };
   return (
@@ -47,13 +60,18 @@ const Movie = (props) => {
         <button
           type="button"
           className="myButton bg-red-600 hover:bg-red-500"
-          onClick={() => eraseMovie(id)}
+          onClick={() => earseAll(id)}
         >
           Sil
         </button>
-        <button className="myButton bg-blue-600 hover:bg-blue-500 ">
-          Favorilere ekle
-        </button>
+        {toggleBtn && (
+          <button
+            onClick={() => addFavs(movie)}
+            className="myButton bg-blue-600 hover:bg-blue-500 "
+          >
+            Favorilere ekle
+          </button>
+        )}
       </div>
     </div>
   );

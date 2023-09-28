@@ -1,4 +1,8 @@
-import { ADD_MOVIE, DELETE_MOVIE } from "../actions/movieActions.js";
+import {
+  ADD_MOVIE,
+  DELETE_MOVIE,
+  REMOVE_FAVORITE_FROM_MOVIES,
+} from "../actions/movieActions.js";
 import movies from "../data.js";
 
 const movieInitialState = {
@@ -17,6 +21,14 @@ const movieReducer = (state = movieInitialState, action) => {
       return {
         ...state,
         movies: [...state.movies, action.payload],
+      };
+    case REMOVE_FAVORITE_FROM_MOVIES:
+      const updatedMovies = state.movies.filter(
+        (item) => action.payload !== item.id
+      );
+      return {
+        ...state,
+        movies: updatedMovies,
       };
     default:
       return state;
