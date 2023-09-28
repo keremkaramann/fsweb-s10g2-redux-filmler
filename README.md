@@ -39,7 +39,7 @@ Bu projede, küçük bir film veritabanı içeren bir web uygulamasında çalı�
       MovieList component'i içerisindeki `movies` datası redux store'dan çekilmelidir. `react-redux` içerisinden `useSelector` hookunu kullanarak `movies` değerine erişin.
 
 - [ ] **`AppHeader` component'i, başlık metnini görüntülemek için `appTitle` değişkenini kullanır.**  
-      `appTitle` değeri redux store'dan çekilmelidir.
+       `appTitle` değeri redux store'dan çekilmelidir.
 
 - [ ] Son olarak `Movie` componentindeki `movies` datası yine redux store içerisinden çekilmelidir.
 
@@ -47,10 +47,10 @@ Bu projede, küçük bir film veritabanı içeren bir web uygulamasında çalı�
 
 - [ ] `movieReducers` dosyası içerisinde `deleteMovie` için yazılmış bir kod bloğu olduğunu ve `movieActions` dosyası içerisinde ilgili **action generator**'ın zaten mevcut olduğunu unutmayın.
 
-- **Silme Action'ı: Movie componentinde** 
+- **Silme Action'ı: Movie componentinde**
   - Silme işleminin tetiklemesi gereken HTML öğesini bulun ve `event handler` oluşturup ve bu DOM öğesine bağlayın.
-  - Bu handler içerisinde Filmin `id` değeri ile `deleteMovie` action'ını tetiklemek için `dispatch` edin. 
-  - Sonra kullanıcıyı `push('/movies')` komutunu kullanarak filmler sayfasına yönlendirin. 
+  - Bu handler içerisinde Filmin `id` değeri ile `deleteMovie` action'ını tetiklemek için `dispatch` edin.
+  - Sonra kullanıcıyı `push('/movies')` komutunu kullanarak filmler sayfasına yönlendirin.
   - **(Bu kısımda, `useParams` ile aldığınız `id` değerinin `string` olduğunu ve `movieReducer` içerisindeki silme eyleminde buna dikkat etmeniz gerektiğini unutmayın!)**
 
 &nbsp;
@@ -71,7 +71,7 @@ Bu projede, küçük bir film veritabanı içeren bir web uygulamasında çalı�
 - [ ] Favoriler özelliği için bir **reducer dosyası** oluşturun. Bu dosyada kullanacağınız `initialState` objesine aşağıdaki değerlerini ekleyin:
 
   - `favorites { Film[] }`: Film nesnesini içeren bir dizi (başlangıç değeri `[]`).
-  - `displayFavorites { Boolean }`: Uygulamada favorilerin göster/gizle değerini tutan bir boolean (başlangıç değeri `false`). 
+  - `displayFavorites { Boolean }`: Uygulamada favorilerin göster/gizle değerini tutan bir boolean (başlangıç değeri `false`).
 
 - [ ] `switch` deyimine `default` case'ini ekleyin.
 
@@ -106,6 +106,6 @@ Bu projede, küçük bir film veritabanı içeren bir web uygulamasında çalı�
 
 - İçeriklerinizi stilleyin ❤️
 
-Tebrikler! 
+Tebrikler!
 &nbsp;
 Projeyi başarıyla tamamladın 👏👏👏
